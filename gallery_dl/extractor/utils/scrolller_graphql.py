@@ -27,16 +27,16 @@ query SubredditPostQuery(
 
 UserPostsQuery = """\
 query UserPostsQuery(
-    $username: String!
+    $collectionId: Int!
     $iterator: String
     $limit: Int!
-    $filter: GalleryFilter
-    $sortBy: GallerySortBy
+    $filter: MediaFilter
+    $sortBy: UserCollectionSortBy
     $isNsfw: Boolean
 ) {
-    getUserPosts(
+    getCollectionContent(
         data: {
-            username: $username
+            collectionId: $collectionId
             iterator: $iterator
             limit: $limit
             filter: $filter
