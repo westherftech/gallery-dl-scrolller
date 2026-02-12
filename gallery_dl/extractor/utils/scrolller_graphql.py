@@ -34,7 +34,7 @@ query UserPostsQuery(
     $sortBy: UserCollectionSortBy
     $isNsfw: Boolean
 ) {
-    getCollectionContent(
+    getUserCollectionContent(
         data: {
             collectionId: $collectionId
             iterator: $iterator
