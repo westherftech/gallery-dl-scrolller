@@ -173,14 +173,14 @@ class ScrolllerSubredditExtractor(ScrolllerExtractor):
 class ScrolllerUserExtractor(ScrolllerExtractor):
     """Extractor for media from a scrolller Reddit user"""
     subcategory = "user"
-    directory_fmt = ("{category}", "User", "{posted_by}")
-    pattern = BASE_PATTERN + r"/reddit-user/([^/?#]+)(?:/?\?([^#]+))?"
+    #directory_fmt = ("{category}", "User", "{posted_by}")
+    pattern = BASE_PATTERN + r"/my-collections/([^/?#]+)(?:/?\?([^#]+))?"
     example = "https://scrolller.com/reddit-user/USER"
 
     def posts(self):
         query = "UserPostsQuery"
         variables = {
-            "username": text.unquote(self.groups[0]),
+            "collectionId": 56708260,
             "iterator": None,
             "limit"   : 40,
             "filter"  : None,
